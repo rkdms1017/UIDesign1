@@ -9,12 +9,12 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, helvetica, arial, sans-serif;
 	transition: background 500ms ease;
-	color: red;
+	color: black;
     Font-family: arial;
 }
 
 p, li {
-	font-size:  22px;
+	font-size:  20px;
 	line-height: 30px;
 }
 
