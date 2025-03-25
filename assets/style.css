@@ -9,6 +9,8 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, helvetica, arial, sans-serif;
 	transition: background 500ms ease;
+	color: red;
+    Font-family: arial;
 }
 
 p, li {
