@@ -60,7 +60,7 @@ header nav a {
 .feeling-sadness     { top: 200px; left: 250px; }
 .feeling-emptiness   { top: 220px; left: 500px; }
 .feeling-excitement  { top: 160px; left: 900px; }
-.feeling-love        { top: 100px; left: 2000px; }
+.feeling-love        { top: 100px; left: 1500px; }
 
 /* 단어마다 시작 타이밍을 살짝씩 다르게 */
 .feeling:nth-child(2) { animation-delay: .5s; }
