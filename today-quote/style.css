@@ -41,7 +41,7 @@ header nav a {
 /* ───────────── 감정 단어 ───────────── */
 .feelings {
   position: fixed;        /* 화면에 고정 */
-  bottom: 80px;           /* 화면 하단에서 위로 80px 띄움 */
+  bottom: 300px;           /* 화면 하단에서 위로 80px 띄움 */
   left: 0;
   right: 0;
   display: flex;
