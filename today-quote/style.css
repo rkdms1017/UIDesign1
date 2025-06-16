@@ -69,8 +69,10 @@ header nav a {
 /* 필요하면 더 추가 */
 
 .emotion-title {
-  font-size: 1.2rem;
-  margin-top: 100px;
+.emotion-title {
+  font-size: 0.9rem !important;
+  margin-top: 160px !important;
+}
   font-weight: 400;
   text-align: center;
 }
