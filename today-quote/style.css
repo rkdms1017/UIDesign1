@@ -39,25 +39,28 @@ header nav a {
 }
 
 /* ───────────── 감정 단어 ───────────── */
-.feelings {
-  position: fixed;        /* 화면에 고정 */
-  bottom: 300px;           /* 화면 하단에서 위로 80px 띄움 */
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px 120px;
-  padding: 0 40px;
+..feelings {
+  position: relative;   /* 기준점 */
+  width: 100%;
+  height: 400px;        /* 감정 단어 영역 높이 설정 */
+  margin-top: 100px;
 }
 
 .feeling {
-  font-size: 1.4rem;
+  position: absolute;              /* 각 단어를 좌표로 배치하기 위해 */
+  animation: float 4s ease-in-out infinite;
   text-decoration: none;
   color: #000;
-  position: relative;            /* 애니메이션용 기준점 */
-  animation: float 3.5s ease-in-out infinite;
+  font-size: 1.4rem;
 }
+.feeling-joy         { top: 50px;  left: 100px; }
+.feeling-loneliness  { top: 80px;  left: 300px; }
+.feeling-anger       { top: 30px;  left: 500px; }
+.feeling-longing     { top: 120px; left: 700px; }
+.feeling-sadness     { top: 200px; left: 150px; }
+.feeling-emptiness   { top: 220px; left: 400px; }
+.feeling-excitement  { top: 160px; left: 600px; }
+.feeling-love        { top: 100px; left: 850px; }
 
 /* 단어마다 시작 타이밍을 살짝씩 다르게 */
 .feeling:nth-child(2) { animation-delay: .5s; }
