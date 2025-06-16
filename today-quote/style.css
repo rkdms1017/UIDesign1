@@ -1,0 +1,77 @@
+/* 글꼴은 시스템 기본으로 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #000;
+  background: #fff;
+  text-align: center;
+}
+
+/* ───────────── 네비게이션 ───────────── */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+  align-items: center;
+}
+
+header nav a {
+  margin: 0 25px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.logo { font-size: 1.4rem; }
+
+/* ───────────── 책 이미지 ───────────── */
+.hero { margin: 40px 0 20px; }
+.book-img { width: 200px; }
+
+/* ───────────── 메인 카피 ───────────── */
+.welcome h2 {
+  font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 80%;
+  margin: 0 auto 80px;
+}
+
+/* ───────────── 감정 단어 ───────────── */
+.feelings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px 120px;   /* 위아래, 좌우 간격 */
+  padding-bottom: 120px;
+}
+
+.feeling {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000;
+  position: relative;            /* 애니메이션용 기준점 */
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* 단어마다 시작 타이밍을 살짝씩 다르게 */
+.feeling:nth-child(2) { animation-delay: .5s; }
+.feeling:nth-child(3) { animation-delay: 1s; }
+.feeling:nth-child(4) { animation-delay: 1.5s; }
+/* 필요하면 더 추가 */
+
+@keyframes float {
+  0%   { transform: translateY(0);   }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0);   }
+}
+
+/* ───────────── 푸터 ───────────── */
+footer {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  color: #999;
+  font-size: .9rem;
+}
