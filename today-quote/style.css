@@ -40,11 +40,15 @@ header nav a {
 
 /* ───────────── 감정 단어 ───────────── */
 .feelings {
+  position: fixed;        /* 화면에 고정 */
+  bottom: 80px;           /* 화면 하단에서 위로 80px 띄움 */
+  left: 0;
+  right: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px 120px;   /* 위아래, 좌우 간격 */
-  padding-bottom: 120px;
+  gap: 60px 120px;
+  padding: 0 40px;
 }
 
 .feeling {
