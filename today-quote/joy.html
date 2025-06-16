@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joy • Today's Quote</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .quote-box {
+      max-width: 700px;
+      margin: 100px auto 40px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .quote-box p {
+      margin-bottom: 1em;
+    }
+
+    .quote-box .author {
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .quote-box .eng {
+      margin-top: 60px;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .nav-arrows {
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 720px;
+      margin: 40px auto;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Today's Quote</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#quote">Today's Quote</a>
+    <a href="#">Bookstore</a>
+  </nav>
+</header>
+
+<section class="welcome">
+  <h2>Joy</h2>
+</section>
+
+<section class="nav-arrows">
+  <div id="prev">◀</div>
+  <div id="next">▶</div>
+</section>
+
+<section class="quote-box" id="quote-box">
+  <!-- JS로 여기에 구절이 들어감 -->
+</section>
+
+<footer>
+  <small>Your Quote of the Day</small>
+</footer>
+
+<script>
+  const quotes = [
+    {
+      text: "여기에 첫 번째 구절을 적어 주세요.",
+      author: "책 제목, 작가명",
+      eng: "First quote translation here."
+    },
+    {
+      text: "두 번째 기쁨 구절을 적어 주세요.",
+      author: "다른 책 제목, 작가명",
+      eng: "Second quote translation here."
+    },
+    {
+      text: "세 번째 구절도 추가할 수 있어요.",
+      author: "또 다른 책, 작가",
+      eng: "Third quote in English."
+    }
+    // 필요하면 계속 추가
+  ];
+
+  let currentIndex = Math.floor(Math.random() * quotes.length);
+  const quoteBox = document.getElementById("quote-box");
+
+  function renderQuote(index) {
+    const q = quotes[index];
+    quoteBox.innerHTML = `
+      <p>${q.text}</p>
+      <div class="author">${q.author}</div>
+      <div class="eng">${q.eng}</div>
+    `;
+  }
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  renderQuote(currentIndex);
+</script>
+
+</body>
+</html>
