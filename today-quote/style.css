@@ -58,8 +58,8 @@ header nav a {
 .feeling-anger       { top: 30px;  left: 800px; }
 .feeling-longing     { top: 120px; left: 1200px; }
 .feeling-sadness     { top: 200px; left: 250px; }
-.feeling-emptiness   { top: 220px; left: 700px; }
-.feeling-excitement  { top: 160px; left: 900px; }
+.feeling-emptiness   { top: 300px; left: 700px; }
+.feeling-excitement  { top: 160px; left: 1000px; }
 .feeling-love        { top: 100px; left: 1400px; }
 
 /* 단어마다 시작 타이밍을 살짝씩 다르게 */
