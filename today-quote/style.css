@@ -68,11 +68,10 @@ header nav a {
 .feeling:nth-child(4) { animation-delay: 1.5s; }
 /* 필요하면 더 추가 */
 
-.emotion-title {
+
 .emotion-title {
   font-size: 0.9rem !important;
   margin-top: 160px !important;
-}
   font-weight: 400;
   text-align: center;
 }
