@@ -2,6 +2,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
+    background-image: url('10.jpg'); /* 또는 'images/10.jpg' */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #333;
   background: #f7f5e6;
