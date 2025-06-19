@@ -31,8 +31,8 @@ header nav a {
 
 /* ───────────── 메인 카피 ───────────── */
 .welcome h2 {
-  font-size: clamp(1.5rem, 3vw + 1rem, 3rem);
-  font-weight: 700;
+  font-size: clamp(1.3rem, 3vw + 1rem, 3rem);
+  font-weight: 500;
   line-height: 1.2;
   max-width: 80%;
   margin: 0 auto 80px;
