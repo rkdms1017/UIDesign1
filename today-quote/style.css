@@ -31,6 +31,9 @@ header nav a {
   display: inline-block;
   vertical-align: middle;
 }
+.music-img {
+  width: 180px; /* 책보다 살짝 작게 */
+}
 
 
 /* ───────────── 메인 카피 ───────────── */
