@@ -68,7 +68,12 @@ header nav a {
      font-family: 'NIXGONM-Vb';
      line-height: 1.5;       /* ✅ 줄 간격 여유 줘서 잘림 방지 */
   padding: 4px 8px;       /* ✅ 텍스트 박스에 여유 공간 확보 */
+  transition: all 0.3s ease;
 }
+.feeling:hover {
+  transform: scale(1.1);      /* 살짝 확대 */
+  color: #6B4C3B;             /* 갈색 톤 */
+} 
 .feeling-joy         { top: 10vh; left: 12vw; }
 .feeling-loneliness  { top: 15vh; left: 32vw; }
 .feeling-anger       { top: 8vh;  left: 50vw; }
