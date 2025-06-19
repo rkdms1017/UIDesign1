@@ -71,7 +71,7 @@ header nav a {
   transition: all 0.3s ease;
 }
 .feeling:hover {
-  transform: scale(1.1);      /* 살짝 확대 */
+  transform: scale(1.5);      /* 살짝 확대 */
   color: #6B4C3B;             /* 갈색 톤 */
 } 
 .feeling-joy         { top: 10vh; left: 12vw; }
