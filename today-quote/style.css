@@ -62,14 +62,15 @@ header nav a {
   color: #000;
   font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
 }
-.feeling-joy         { top: 50px;  left: 150px; }
-.feeling-loneliness  { top: 80px;  left: 400px; }
-.feeling-anger       { top: 40px;  left: 780px; }
-.feeling-longing     { top: 120px; left: 1200px; }
-.feeling-sadness     { top: 230px; left: 250px; }
-.feeling-emptiness   { top: 270px; left: 650px; }
-.feeling-excitement  { top: 200px; left: 950px; }
-.feeling-love        { top: 60px; left: 1400px; }
+.feeling-joy         { top: 10vh; left: 12vw; }
+.feeling-loneliness  { top: 15vh; left: 32vw; }
+.feeling-anger       { top: 8vh;  left: 50vw; }
+.feeling-longing     { top: 20vh; left: 68vw; }
+.feeling-sadness     { top: 30vh; left: 18vw; }
+.feeling-emptiness   { top: 35vh; left: 45vw; }
+.feeling-excitement  { top: 25vh; left: 72vw; }
+.feeling-love        { top: 12vh; left: 85vw; }
+
 
 /* 단어마다 시작 타이밍을 살짝씩 다르게 */
 .feeling:nth-child(2) { animation-delay: .5s; }
