@@ -61,7 +61,7 @@ header nav a {
 
 .feeling {
   position: absolute;              /* 각 단어를 좌표로 배치하기 위해 */
-  animation: flicker 5s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
   text-decoration: none;
   color: #000;
   font-size: clamp(0.9rem, 2vw + 0.5rem, 1.5rem);
@@ -101,10 +101,6 @@ header nav a {
   100% { transform: translateY(0); }
 }
 
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.6; }
-}
 
 
 /* ───────────── 푸터 ───────────── */
