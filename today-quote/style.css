@@ -25,9 +25,13 @@ header nav a {
 
 .logo { font-size: 1.4rem; }
 
-/* ───────────── 책 이미지 ───────────── */
-.hero { margin: 40px 0 20px; }
-.book-img { width: 200px; }
+.icon-img {
+  width: 200px;
+  margin: 0 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 /* ───────────── 메인 카피 ───────────── */
 .welcome h2 {
