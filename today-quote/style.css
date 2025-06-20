@@ -132,7 +132,7 @@ footer {
     font-weight: 700;
     font-style: normal;
 }
-}
+
 .icon-img:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
