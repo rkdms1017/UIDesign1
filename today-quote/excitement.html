@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excitement• Today's Quote</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    .emotion-title {
+  margin-top: 30px !important;  /* 기본 90px → 30px 정도로 */
+}
+
+    .quote-box {
+      max-width: 700px;
+      margin: 0px auto 0px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      position: relative;
+  top: -240px;  /* 🔼 위로 당김 */
+  font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box p {
+      margin-bottom: 1em;
+    }
+
+    .quote-box .author {
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box .eng {
+      margin-top: 60px;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .nav-arrows {
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 950px;
+      margin: 170px auto 170px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('10.jpg'); /* 종이질감 이미지 경로 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* ✅ 스크롤해도 배경 고정 */
+}
+
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Today's Quote</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#quote">Today's Quote</a>
+    <a href="#">Bookstore</a>
+  </nav>
+</header>
+
+<section class="welcome">
+  <h2 class="emotion-title">Excitement</h2>
+</section>
+
+<section class="nav-arrows">
+  <div id="prev">◀</div>
+  <div id="next">▶</div>
+</section>
+
+<section class="quote-box" id="quote-box">
+  <!-- JS로 여기에 구절이 들어감 -->
+</section>
+
+<footer>
+  <small>Your Quote of the Day</small>
+</footer>
+
+<script>
+  const quotes = [
+    {
+      text: "삶은 언제나 현재진행형이 아닌 현재멈춤형이었다. 그녀는 앞날에 대해 어떤 기대도 소망도 없었으며 그저 살아 있기 떄문에, 오늘도 눈을 떴기 때문에 연장을 잡았다. 그것으로 자신이 존재하는 이유를 확인하지 않았고, 자신의 행동에 논거를 깔거나 의미를 부여하지 않았다. 살아남으려고 노력하지 않았고 일찍 죽기 위해 몸을 아무렇게나 던지지도 않았다.",
+      author: "파과, 구병모",
+      eng: "Life was never a present continuous but a present standstill. She had no expectations or hopes for the future—she simply picked up the wrench because she was still breathing, because she had opened her eyes again that morning. She didn’t use it to prove her existence, nor did she try to justify her actions or assign them any meaning. She didn’t strive to survive, nor did she recklessly throw herself toward an early death."
+    },
+    {
+      text: "'나는 홀로 몰두할 수 있는 모든 일을 잘했다. 몰두하면 시간이 가고, 시간이 가면 그곳으로부터 더 빨리 벗어날 수 있으리라는 걸 알았으니까'",
+      author: "아주 희미한 빛으로도, 최은영",
+      eng: "I was good at anything I could lose myself in alone. I knew that if I immersed myself, time would pass—and if time passed, I could escape that place a little sooner."
+    },
+    {
+      text: "내가 왜 살아야 하는지 가르쳐 주는 사람이 있다면 나의 모든 것을 내주어도 괜찮겠다는 생각마저 들 정도였다. 그럴수록 사랑이 하고 싶어졌다. 누군가 나를 구원해 주기를, 그래서 이 지독한 정신적 방황을 멈추게 해 주기를 바랐던 것이다.",
+      author: "생각이 너무 많은 어른들을 위한 심리학, 김혜남",
+      eng: "If there were someone who could teach me why I should go on living, I felt I could give them everything I had. And the more I felt that way, the more I longed to be loved. I hoped someone would save me—would put an end to this relentless wandering of the mind."
+    }
+    // 필요하면 계속 추가
+  ];
+
+  let currentIndex = Math.floor(Math.random() * quotes.length);
+  const quoteBox = document.getElementById("quote-box");
+
+  function renderQuote(index) {
+    const q = quotes[index];
+    quoteBox.innerHTML = `
+      <p>${q.text}</p>
+      <div class="author">${q.author}</div>
+      <div class="eng">${q.eng}</div>
+    `;
+  }
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  renderQuote(currentIndex);
+</script>
+
+</body>
+</html>

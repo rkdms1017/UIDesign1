@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Longing• Today's Quote</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    .emotion-title {
+  margin-top: 30px !important;  /* 기본 90px → 30px 정도로 */
+}
+
+    .quote-box {
+      max-width: 700px;
+      margin: 0px auto 0px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      position: relative;
+  top: -240px;  /* 🔼 위로 당김 */
+  font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box p {
+      margin-bottom: 1em;
+    }
+
+    .quote-box .author {
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box .eng {
+      margin-top: 60px;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .nav-arrows {
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 950px;
+      margin: 170px auto 170px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('10.jpg'); /* 종이질감 이미지 경로 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* ✅ 스크롤해도 배경 고정 */
+}
+
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Today's Quote</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#quote">Today's Quote</a>
+    <a href="#">Bookstore</a>
+  </nav>
+</header>
+
+<section class="welcome">
+  <h2 class="emotion-title">Longing</h2>
+</section>
+
+<section class="nav-arrows">
+  <div id="prev">◀</div>
+  <div id="next">▶</div>
+</section>
+
+<section class="quote-box" id="quote-box">
+  <!-- JS로 여기에 구절이 들어감 -->
+</section>
+
+<footer>
+  <small>Your Quote of the Day</small>
+</footer>
+
+<script>
+  const quotes = [
+    {
+      text: "'네가 그리웠어.' 나는 쇼코가 조금 미워져서 나도 네가 보고 싶었다고는 말하지 않았다. 그런데도 내가 그리웠었다는 그 말에 눈물이 났다. 어떤 연애는 우정 같고, 어떤 우정은 연애 같다. 쇼코를 생각하면 그애가 나를 더이상 좋아하지 않을까봐 두려웠었다.",
+      author: "쇼코의 미소, 최은영",
+      eng: "“I missed you,” she said. I didn’t say I missed her too—partly because I felt a little bitter toward Shoko. But still, hearing those words made me cry. Some love feels like friendship, and some friendship feels like love. When I thought of Shoko, I realized I had always been afraid she might stop liking me."
+    },
+    {
+      text: "시간은 지나고 사람들은 떠나고 우리는 다시 혼자가 된다. 그 사실을 받아들이지 않으면 기억은 현재를 부식시키고 마음을 지치게 해 우리를 늙고 병들게 한다. 할머니는 그렇게 말했었다. 나는 그 말을 언제나 기억한다.'",
+      author: "쇼코의 미소, 최은영",
+      eng: "Time passes, people leave, and we are left alone again. If we refuse to accept that, memories begin to erode the present, wearing down the heart and making us old and weary. That’s what my grandmother once said. I’ve never forgotten those words.”"
+    },
+    {
+      text: "강하는 그 이름을 일상적으로 부르는 것조차 두려웠던 거예요. 한 번 제대로 마주한 적 없는 존재의 이름을 부르는 순간, 그 한 음절이 혈관을 부풀어 오르게 하고 마침내 심장이 터져버릴 것 같아서.",
+      author: "아가미, 구병모",
+      eng: "Kangha was afraid to even say his name out loud in daily life. The moment he called out the name of someone he had never truly faced, it felt as if that single syllable would swell through his veins and make his heart explode."
+    }
+    // 필요하면 계속 추가
+  ];
+
+  let currentIndex = Math.floor(Math.random() * quotes.length);
+  const quoteBox = document.getElementById("quote-box");
+
+  function renderQuote(index) {
+    const q = quotes[index];
+    quoteBox.innerHTML = `
+      <p>${q.text}</p>
+      <div class="author">${q.author}</div>
+      <div class="eng">${q.eng}</div>
+    `;
+  }
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  renderQuote(currentIndex);
+</script>
+
+</body>
+</html>

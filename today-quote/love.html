@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love• Today's Quote</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    .emotion-title {
+  margin-top: 30px !important;  /* 기본 90px → 30px 정도로 */
+}
+
+    .quote-box {
+      max-width: 700px;
+      margin: 0px auto 0px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      position: relative;
+  top: -240px;  /* 🔼 위로 당김 */
+  font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box p {
+      margin-bottom: 1em;
+    }
+
+    .quote-box .author {
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box .eng {
+      margin-top: 60px;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .nav-arrows {
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 950px;
+      margin: 170px auto 170px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('10.jpg'); /* 종이질감 이미지 경로 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* ✅ 스크롤해도 배경 고정 */
+}
+
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Today's Quote</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#quote">Today's Quote</a>
+    <a href="#">Bookstore</a>
+  </nav>
+</header>
+
+<section class="welcome">
+  <h2 class="emotion-title">Love</h2>
+</section>
+
+<section class="nav-arrows">
+  <div id="prev">◀</div>
+  <div id="next">▶</div>
+</section>
+
+<section class="quote-box" id="quote-box">
+  <!-- JS로 여기에 구절이 들어감 -->
+</section>
+
+<footer>
+  <small>Your Quote of the Day</small>
+</footer>
+
+<script>
+  const quotes = [
+    {
+      text: "그것은 매듭 이후, 끊임없이 이어질 달콤한 하루의 첫날. 셀 수 없을 키스 중의 첫 키스였다. 흔하지 않지만 어떤 사랑은 항상성을 가지고, 요동치지 않고, 요철도 없이 랄랄라 하고 계속되기도 한다.",
+      author: "지구에서 한아뿐, 정세랑",
+      eng: "It was the first day of countless sweet days to follow, the first kiss among kisses that would never be counted. Though rare, some kinds of love carry permanence—steady, without turbulence or rough edges, simply going on and on, singing lalala."
+    },
+    {
+      text: "'너는 그곳에서 전쟁으로 고통받는 사람들을 살리는 일을 했어! 사람을 사랑하고 살리는 일을 했어! 너는 사람을 끌어안아야 하는 로봇이었어. 두 팔로! 네 팔은 다른 로봇의 팔과 달라. 인간을 안았을 떄 안정감을 줬어. 너는 그 팔로 인간의 마음을 안았어! 고고, 너는 랑을 진심으로 사랑했던 거야! 네 마음은 진짜야!",
+      author: "랑과 나의 사막, 천선란",
+      eng: "'You saved people suffering from war in that place! You loved and healed people! You were a robot meant to embrace humans—with both arms! Your arms were different from other robots. When you held someone, they felt safe. With those arms, you held not just their bodies, but their hearts! GoGo, you truly loved Rang! Your feelings were real!'"
+    },
+    {
+      text: "나의 시간은 대부분 사랑을 하는 데 쓰인다. 너무나 오랫동안 그래왔다. 나에게 사랑은 태도이자 습관. 규칙이자 성격. 원칙이자 자랑. 그리고 내 몸집만한, 내 영혼의 크기만한 콤플렉스다.",
+      author: "공룡의 이동 경로, 김화진",
+      eng: "Most of my time is spent on loving. It has been that way for as long as I can remember. For me, love is a posture, a habit— a rule, a personality— a principle, a source of pride. And also, a complex as big as my body, as vast as my soul."
+    }
+    // 필요하면 계속 추가
+  ];
+
+  let currentIndex = Math.floor(Math.random() * quotes.length);
+  const quoteBox = document.getElementById("quote-box");
+
+  function renderQuote(index) {
+    const q = quotes[index];
+    quoteBox.innerHTML = `
+      <p>${q.text}</p>
+      <div class="author">${q.author}</div>
+      <div class="eng">${q.eng}</div>
+    `;
+  }
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  renderQuote(currentIndex);
+</script>
+
+</body>
+</html>

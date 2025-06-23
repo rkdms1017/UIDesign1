@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anger• Today's Quote</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    .emotion-title {
+  margin-top: 30px !important;  /* 기본 90px → 30px 정도로 */
+}
+
+    .quote-box {
+      max-width: 700px;
+      margin: 0px auto 0px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      position: relative;
+  top: -240px;  /* 🔼 위로 당김 */
+  font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box p {
+      margin-bottom: 1em;
+    }
+
+    .quote-box .author {
+      text-align: right;
+      font-size: 0.95rem;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .quote-box .eng {
+      margin-top: 60px;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-family: 'GowunBatang-Regular', serif; /* ✅ 추가 */
+    }
+
+    .nav-arrows {
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 950px;
+      margin: 170px auto 170px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('10.jpg'); /* 종이질감 이미지 경로 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* ✅ 스크롤해도 배경 고정 */
+}
+
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Today's Quote</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#quote">Today's Quote</a>
+    <a href="#">Bookstore</a>
+  </nav>
+</header>
+
+<section class="welcome">
+  <h2 class="emotion-title">Anger</h2>
+</section>
+
+<section class="nav-arrows">
+  <div id="prev">◀</div>
+  <div id="next">▶</div>
+</section>
+
+<section class="quote-box" id="quote-box">
+  <!-- JS로 여기에 구절이 들어감 -->
+</section>
+
+<footer>
+  <small>Your Quote of the Day</small>
+</footer>
+
+<script>
+  const quotes = [
+    {
+      text: "아침에는 나를 버렸다가 밤이면 후회하면서 찾으러오는 엄마를 생각하자 미워할 수 있었다. 미워하는 마음은 나를 더 외롭게 했다. 창밖을 바라보며 아주 많은 생각을 만들고 버렸다. 어떤 생각은 아무리 버리려고 해도 그릇에 묻은 물처럼 깔끔하게 비워지지 않았다.",
+      author: "쓰게 될 것, 최진영",
+      eng: "I could hate her when I thought of a mother who abandoned me in the morning, only to come searching with regret by night. But that hatred only made me feel lonelier. I stared out the window, creating and discarding countless thoughts. Some thoughts, no matter how much I tried to throw them away, clung to me like water left behind in a bowl—never fully emptied."
+    },
+    {
+      text: "나는 스스로를 비난하고 반박하길 즐기는데, 가학과 피학 중 어디서 쾌감을 얻는지 모르겠다. 장점이라면 남들이 하는 욕에 무뎌진다는 것이다. 누군가 내게 '넌 정말 싸가지가 없어.'라고 하면, 나는 슬퍼하는 대신 이렇게 생각한다. '한 발 늦었어요. 그 사실은 29년 전의 제가 먼저 발견했답니다. 아직 저의 고향이 엄마 배 속이던 시절에 말이지요.'",
+      author: "젊은 ADHD의 슬픔, 정지음",
+      eng: "I take a strange pleasure in criticizing and contradicting myself, though I’m not sure whether the satisfaction comes from self-inflicted cruelty or masochism. If there’s an upside, it’s that I’ve grown numb to insults from others. When someone says, “You’re really rude,” I don’t get hurt. Instead, I think, “You’re late to the party. That truth was discovered 29 years ago—by me—back when my hometown was still my mother’s womb.”"
+    },
+    {
+      text: "'그분도 알고 보면 괜찮은 사람일 거야' '맙소사! 그렇다면 그거야말로 불운 중에서도 최악의 불운이게! 미워하기로 마음먹은 사람이 알고 보니 괜찮은 사람일 거라니! 아예 악담을 하지 그래.'",
+      author: "오만과 편견, 제인 오스틴",
+      eng: "“He must be a decent person deep down.” “Oh no! That would be the worst kind of misfortune! To find out that the very person I decided to hate turns out to be a good one? You might as well hurl a curse at me.”"
+    }
+    // 필요하면 계속 추가
+  ];
+
+  let currentIndex = Math.floor(Math.random() * quotes.length);
+  const quoteBox = document.getElementById("quote-box");
+
+  function renderQuote(index) {
+    const q = quotes[index];
+    quoteBox.innerHTML = `
+      <p>${q.text}</p>
+      <div class="author">${q.author}</div>
+      <div class="eng">${q.eng}</div>
+    `;
+  }
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    renderQuote(currentIndex);
+  });
+
+  renderQuote(currentIndex);
+</script>
+
+</body>
+</html>
